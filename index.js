@@ -88,7 +88,7 @@ app.put("/game/:id", (req, res) => {
   const { title, price, year } = req.body;
 
   const hasUpdates = [title, price, year].some((v) => v !== undefined);
-  if (!hasUpdates) return res.sendStatus(304); // Nada para atualizar
+  if (!hasUpdates) return res.sendStatus(304);
 
   if (title !== undefined) game.title = title;
   if (price !== undefined) game.price = price;
